@@ -62,4 +62,22 @@ fn main() {
     println!("a = {}, b = {}, c = {}", a, b, c);
     let (_, z, _) = t;
     println!("z = {}", z);
+
+    // array
+    let arr: [u32; 3] = [1, 2, 3];
+    println!("arr[0] = {}", arr[0]);
+    let mut arr: [u32; 3] = [1, 2, 3];
+    arr[0] = 1;
+    let arr: [u32; 10] = [0; 10];
+    println!("arr[0] = {:?}", arr);
+    // slicing
+    let nums: [i32; 10] = [-1, 1, -2, 2, -3, 3, -4, 4, -5, 5];
+    // first 3
+    let s: &[i32] = &nums[..3];
+    // last 3
+    let s: &[i32] = &nums[3..];
+    // middle 4
+    let s: &[i32] = &nums[3..7];
+
+    
 }
