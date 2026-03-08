@@ -5,3 +5,5 @@ edition = "2024"
 
 [dependencies]
 tokio = {version = "1.50.0", features = ["full"]}
+alloy-primitives = "1.5.7"
+hex = "0.4.3"
