@@ -19,18 +19,32 @@ fn main() {
 
     // collect
     let vals: Vec<(&str, u32)> = vec![("a", 1), ("b", 2), ("c", 3), ("d", 4)];
-    let v: Vec<(String, u32)> = vals.iter().map(|v| (v.0.to_string(), v.1 + 1)).collect();
+    let v: Vec<(String, u32)> = vals
+        .iter()
+        .map(|v| (v.0.to_string(), v.1 + 1))
+        .collect();
     println!("v {:?}", v);
-    let v: HashMap<String, u32> = vals.iter().map(|v| (v.0.to_string(), v.1 + 1)).collect();
+    let v: HashMap<String, u32> = vals
+        .iter()
+        .map(|v| (v.0.to_string(), v.1 + 1))
+        .collect();
     println!("v {:?}", v);
 
     // chaining filter and map
     let vals: Vec<u32> = vec![1, 2, 3, 4, 5];
-    let v: Vec<u32> = vals.iter().filter(|x: &&u32| **x <= 3).map(|x: &u32| x + 1).collect();
+    let v: Vec<u32> = vals
+        .iter()
+        .filter(|x: &&u32| **x <= 3)
+        .map(|x: &u32| x + 1)
+        .collect();
     println!("v {:?}", v);
 
     let vals: Vec<u32> = vec![1, 2, 3, 4, 5];
-    let v: Vec<u32> = vals.into_iter().filter(|x: &u32| *x <= 3).map(|x: u32| x + 1).collect();
+    let v: Vec<u32> = vals
+        .into_iter()
+        .filter(|x: &u32| *x <= 3)
+        .map(|x: u32| x + 1)
+        .collect();
     println!("v {:?}", v);
 
 }
